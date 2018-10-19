@@ -13,7 +13,6 @@
 		1949689E213EBCE3003408F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1949689C213EBCE3003408F2 /* Main.storyboard */; };
 		194968A0213EBCE4003408F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1949689F213EBCE4003408F2 /* Assets.xcassets */; };
 		194968A3213EBCE4003408F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 194968A1213EBCE4003408F2 /* LaunchScreen.storyboard */; };
-		194968AE213EBCE4003408F2 /* GasolineProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194968AD213EBCE4003408F2 /* GasolineProjectTests.swift */; };
 		194968C7213EBE29003408F2 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194968C6213EBE29003408F2 /* CustomView.swift */; };
 		194968C9213EE73A003408F2 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194968C8213EE73A003408F2 /* ResultViewController.swift */; };
 		19B3C0F9216F62A0008DE6A4 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19B3C0F7216F62A0008DE6A4 /* Model.xcdatamodeld */; };
@@ -52,10 +51,7 @@
 		194968A2213EBCE4003408F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194968A4213EBCE4003408F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194968A9213EBCE4003408F2 /* GasolineProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasolineProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194968AD213EBCE4003408F2 /* GasolineProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasolineProjectTests.swift; sourceTree = "<group>"; };
-		194968AF213EBCE4003408F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194968B4213EBCE4003408F2 /* GasolineProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasolineProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194968BA213EBCE4003408F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		194968C6213EBE29003408F2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		194968C8213EE73A003408F2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		19B3C0F8216F62A0008DE6A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -94,8 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				19496897213EBCE3003408F2 /* GasolineProject */,
-				194968AC213EBCE4003408F2 /* GasolineProjectTests */,
-				194968B7213EBCE4003408F2 /* GasolineProjectUITests */,
 				19496896213EBCE3003408F2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -123,23 +117,6 @@
 				194968A4213EBCE4003408F2 /* Info.plist */,
 			);
 			path = GasolineProject;
-			sourceTree = "<group>";
-		};
-		194968AC213EBCE4003408F2 /* GasolineProjectTests */ = {
-			isa = PBXGroup;
-			children = (
-				194968AD213EBCE4003408F2 /* GasolineProjectTests.swift */,
-				194968AF213EBCE4003408F2 /* Info.plist */,
-			);
-			path = GasolineProjectTests;
-			sourceTree = "<group>";
-		};
-		194968B7213EBCE4003408F2 /* GasolineProjectUITests */ = {
-			isa = PBXGroup;
-			children = (
-				194968BA213EBCE4003408F2 /* Info.plist */,
-			);
-			path = GasolineProjectUITests;
 			sourceTree = "<group>";
 		};
 		19E907B72173EFB100C4CC68 /* Controller */ = {
@@ -314,7 +291,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				194968AE213EBCE4003408F2 /* GasolineProjectTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

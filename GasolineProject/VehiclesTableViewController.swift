@@ -10,8 +10,21 @@ import UIKit
 
 class VehiclesTableViewController: UITableViewController {
 
+    var cars = [Car]()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        
+        var dao = CarDAO()
+        self.cars = dao.read()
+        print(cars[0].model)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.tabBarController?.tabBar.isHidden = false
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

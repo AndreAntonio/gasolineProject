@@ -259,7 +259,7 @@
         <!--Veículos-->
         <scene sceneID="evp-wr-OFM">
             <objects>
-                <tableViewController id="gNg-k0-NVw" sceneMemberID="viewController">
+                <tableViewController id="gNg-k0-NVw" customClass="VehiclesTableViewController" customModule="GasolineProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nK8-vc-zOB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -291,21 +291,63 @@
             </objects>
             <point key="canvasLocation" x="478" y="-18"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Vehicle View Controller-->
         <scene sceneID="tSi-Ub-FXU">
             <objects>
-                <viewController id="LDl-bk-yVx" sceneMemberID="viewController">
+                <viewController id="LDl-bk-yVx" customClass="AddVehicleViewController" customModule="GasolineProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PtL-Te-DN6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sM3-31-YjC">
+                                <rect key="frame" x="22" y="233" width="331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ejF-Ye-4Ym">
+                                <rect key="frame" x="22" y="318" width="331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3pY-hb-WBT">
+                                <rect key="frame" x="22" y="492" width="331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="deb-Rc-osX">
+                                <rect key="frame" x="22" y="402" width="331" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="qyH-cI-UXQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="HLn-ep-S43"/>
+                    <navigationItem key="navigationItem" id="HLn-ep-S43">
+                        <barButtonItem key="rightBarButtonItem" title="Salvar" id="kNT-ho-SzL">
+                            <connections>
+                                <action selector="doneButtonTapped:" destination="LDl-bk-yVx" id="IM1-7y-oba"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="etanolTextFieldOutlet" destination="3pY-hb-WBT" id="ZNm-Qu-E8h"/>
+                        <outlet property="gasolineAutTextFieldOutlet" destination="deb-Rc-osX" id="vC3-NS-GA6"/>
+                        <outlet property="makeTextFieldOutlet" destination="sM3-31-YjC" id="1PM-LV-uzR"/>
+                        <outlet property="modelTextFieldOutlet" destination="ejF-Ye-4Ym" id="wkU-iZ-PoT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c8B-0g-UWE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1414" y="-18"/>
+            <point key="canvasLocation" x="1413.5999999999999" y="-18.472906403940886"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8gP-Xn-Oj6">
