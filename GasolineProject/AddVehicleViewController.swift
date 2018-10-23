@@ -22,6 +22,8 @@ class AddVehicleViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Adicionar Veículo"
+        
         self.tabBarController?.tabBar.isHidden = true
         
         makeTextFieldOutlet.delegate = self

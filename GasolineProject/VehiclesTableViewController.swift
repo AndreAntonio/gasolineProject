@@ -10,21 +10,20 @@ import UIKit
 
 class VehiclesTableViewController: UITableViewController {
 
-    var cars = [Car]()
+    var cars = [CarStruct]()
+    var dao = CarDAO()
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
-        
-        var dao = CarDAO()
         self.cars = dao.read()
-        print(cars[0].model)
+        self.tableView.reloadData()
+        self.tabBarController?.tabBar.isHidden = false
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.tabBarController?.tabBar.isHidden = false
-        
+        self.tabBarController?.tabBar.isHidden = false
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,12 +36,23 @@ class VehiclesTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.cars.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleTableViewCell", for: indexPath) as! UITableViewCell
+        
+        cell.detailTextLabel?.text = "Xablau"
+        
+        cell.textLabel?.text = self.cars[indexPath.row].make! + " " + self.cars[indexPath.row].model!
+        
+        return cell
+        
     }
 
     /*

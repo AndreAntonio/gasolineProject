@@ -18,6 +18,8 @@ class ResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "Resultado"
+        
         self.resultStringOutlet.text = "Xablau"
         self.navigationController?.navigationBar.isHidden = false
         print(result)

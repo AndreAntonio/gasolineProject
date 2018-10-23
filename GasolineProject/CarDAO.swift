@@ -14,62 +14,66 @@ public class CarDAO{
     
     public func create(make: String, model: String, gasAut: Double, etanolAut: Double, id:String){
         
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let usuario = NSEntityDescription.insertNewObject(forEntityName: "Car", into: context)
         
-        let managedContext = appDelegate.persistentContainer.viewContext
-        
-        let carEntity = NSEntityDescription.entity(forEntityName: "Car", in: managedContext )
-        
-        let car = NSManagedObject(entity: carEntity!, insertInto: managedContext)
-        
-        car.setValue(etanolAut, forKey: "etanolAut")
-        car.setValue(gasAut, forKey: "gasolineAut")
-        car.setValue(make, forKey: "make")
-        car.setValue(model, forKey: "model")
-        car.setValue(id, forKey: "id")
+        usuario.setValue(etanolAut, forKey: "etanolAut")
+        usuario.setValue(gasAut, forKey: "gasolineAut")
+        usuario.setValue(id, forKey: "id")
+        usuario.setValue(make, forKey: "make")
+        usuario.setValue(model, forKey: "model")
         
         do {
-            
-            try managedContext.save()
-            print("Contexto salvo com sucesso")
-            
-        } catch let error as NSError{
-            
-            print("Failed")
-            
+            try context.save()
+            print("Dados Salvos Com Sucesso")
+        }catch{
+            print("Erro ao salvar os dados")
         }
         
     }
     
-    public func read() -> [Car] {
+    public func read() -> [CarStruct] {
         
-        var cars = [Car]()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let car = NSEntityDescription.entity(forEntityName: "Car", in: context)
+       //let usuario = NSEntityDescription.insertNewObject(forEntityName: "Car", into: context)
         
-         let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Car")
         
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let carEntity = NSEntityDescription.entity(forEntityName: "Car", in: managedContext )
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Car")
+        var returnArray = [CarStruct]()
         
         do{
-            let result = try managedContext.fetch(fetchRequest)
-            for data in result as! [NSManagedObject] {
-                var car = Car.init(entity: carEntity!, insertInto: managedContext)
-                car.etanolAut = data.value(forKey: "etanolAut") as! Double
-                car.gasolineAut = data.value(forKey: "gasolineAut") as! Double
-                car.make = data.value(forKey: "make") as? String
-                car.model = data.value(forKey: "model") as? String
-                car.id = data.value(forKey: "id") as? String
-                
-                cars.append(car)
+            let cars = try context.fetch(request) as! [NSManagedObject]
+            
+            //verifica se existe usuario
+            
+            if cars.count > 0 {
+                for car in cars{
+                    
+                    
+                    var id = car.value(forKey: "id") as! String
+                    var make = car.value(forKey: "make") as! String
+                    var model = car.value(forKey: "model") as! String
+                    var gasolineAut = car.value(forKey: "gasolineAut") as! Double
+                    var etanolAut = car.value(forKey: "etanolAut") as! Double
+                    
+                    var returnCar = CarStruct(id: id, gasolineAut: gasolineAut, etanolAut: etanolAut, make: make, model: model)
+                    
+                    returnArray.append(returnCar)
+                }
+            }else{
+                print("no car found")
             }
-            } catch {
-                print("failed")
-            }
-        
-        return cars
-
+            
+        }catch{
+            print("Erro ao recuperar os dados")
         }
+
+        return returnArray
+
+    }
     
     
     public func update(){

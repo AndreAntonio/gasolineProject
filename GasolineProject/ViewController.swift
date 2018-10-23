@@ -10,11 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var fuelView: CustomView!
-    @IBOutlet weak var fuelBanner: CustomView!
     
-    @IBOutlet weak var pricesView: CustomView!
-    @IBOutlet weak var pricesBanner: CustomView!
+    
+    var car = CarStruct.init()
     
     //Comsumption Outlets
     @IBOutlet weak var gasolineConsumption: UITextField!
@@ -23,6 +21,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     //Prices Outlets
     @IBOutlet weak var gasolinePrice: UITextField!
     @IBOutlet weak var alcoholPrice: UITextField!
+    
+    @IBOutlet weak var chosenVehicleOutlet: UILabel!
+    
     
     
     @IBOutlet weak var calculateButtonOutlet: UIButton!
@@ -33,20 +34,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.navigationController?.navigationBar.isHidden = false
+        
+        if CarManager.shared.managedCar.id != nil {
+            self.car = CarManager.shared.managedCar
+            print(self.car.make)
+            print(self.car.etanolAut)
+            print(self.car.gasolineAut)
+            
+            self.chosenVehicleOutlet.text = "\(self.car.make!)" + " " + "\(self.car.model!)"
+            
+            self.gasolineConsumption.text = "\(self.car.gasolineAut!)"
+            self.alcoholConsumption.text = "\(self.car.etanolAut!)"
+            
+        }
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        self.fuelBanner.roundCorners([.topLeft,.topRight], radius: 10)
-        self.pricesBanner.roundCorners([.topLeft,.topRight], radius: 10)
-
-        self.calculateButtonOutlet.layer.cornerRadius = self.calculateButtonOutlet.bounds.height/2
-        self.calculateButtonOutlet.clipsToBounds = true
+       
         
-        views = [fuelView, pricesView]
-        self.setupViews(views: views)
         
         gasolineConsumption.delegate = self
         alcoholConsumption.delegate = self
@@ -58,20 +67,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    func setupViews(views: [CustomView]) {
-        
-        for view in views {
-            //view.roundCorners([.allCorners], radius: 10)
-            view.layer.cornerRadius = 10
-            view.clipsToBounds = true
-            view.layer.masksToBounds = false
-            view.layer.shadowColor = UIColor.black.cgColor
-            view.layer.shadowOpacity = 0.1
-            view.layer.shadowOffset = CGSize(width: 0, height: 0)
-            view.layer.shadowRadius = 5
-        }
     }
     
     func calculateCostBenefit(alcoholAutonomy: Double, gasolineAutonomy: Double, alcoholPrice: Double, gasolinePrice: Double) -> String{

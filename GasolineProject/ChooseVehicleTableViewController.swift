@@ -9,10 +9,20 @@
 import UIKit
 
 class ChooseVehicleTableViewController: UITableViewController {
+    
+    var cars = [CarStruct]()
+    var dao = CarDAO()
 
+    override func viewWillAppear(_ animated: Bool) {
+        self.cars = dao.read()
+        self.tableView.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Escolher Veículo"
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,24 +34,32 @@ class ChooseVehicleTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return cars.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleCell", for: indexPath)
 
-        // Configure the cell...
+        cell.textLabel?.text = self.cars[indexPath.row].model
+        cell.detailTextLabel?.text = self.cars[indexPath.row].make
 
         return cell
     }
-    */
-
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        CarManager.shared.managedCar = self.cars[indexPath.row]
+        print(CarManager.shared.managedCar.make)
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
