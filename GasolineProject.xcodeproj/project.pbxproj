@@ -24,23 +24,6 @@
 		19E907BD2173F0AF00C4CC68 /* EditVehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E907BC2173F0AF00C4CC68 /* EditVehicleViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		194968AA213EBCE4003408F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1949688D213EBCE3003408F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19496894213EBCE3003408F2;
-			remoteInfo = GasolineProject;
-		};
-		194968B5213EBCE4003408F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1949688D213EBCE3003408F2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19496894213EBCE3003408F2;
-			remoteInfo = GasolineProject;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		1907357C217F4F9500532CEE /* CarManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarManager.swift; sourceTree = "<group>"; };
 		19121052217799F9003B28D4 /* Car+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -54,8 +37,6 @@
 		1949689F213EBCE4003408F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		194968A2213EBCE4003408F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		194968A4213EBCE4003408F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		194968A9213EBCE4003408F2 /* GasolineProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasolineProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		194968B4213EBCE4003408F2 /* GasolineProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GasolineProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		194968C6213EBE29003408F2 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		194968C8213EE73A003408F2 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		19B3C0F8216F62A0008DE6A4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -67,20 +48,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		19496892213EBCE3003408F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		194968A6213EBCE4003408F2 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		194968B1213EBCE4003408F2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -102,8 +69,6 @@
 			isa = PBXGroup;
 			children = (
 				19496895213EBCE3003408F2 /* GasolineProject.app */,
-				194968A9213EBCE4003408F2 /* GasolineProjectTests.xctest */,
-				194968B4213EBCE4003408F2 /* GasolineProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,42 +134,6 @@
 			productReference = 19496895213EBCE3003408F2 /* GasolineProject.app */;
 			productType = "com.apple.product-type.application";
 		};
-		194968A8213EBCE4003408F2 /* GasolineProjectTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 194968C0213EBCE4003408F2 /* Build configuration list for PBXNativeTarget "GasolineProjectTests" */;
-			buildPhases = (
-				194968A5213EBCE4003408F2 /* Sources */,
-				194968A6213EBCE4003408F2 /* Frameworks */,
-				194968A7213EBCE4003408F2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				194968AB213EBCE4003408F2 /* PBXTargetDependency */,
-			);
-			name = GasolineProjectTests;
-			productName = GasolineProjectTests;
-			productReference = 194968A9213EBCE4003408F2 /* GasolineProjectTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		194968B3213EBCE4003408F2 /* GasolineProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 194968C3213EBCE4003408F2 /* Build configuration list for PBXNativeTarget "GasolineProjectUITests" */;
-			buildPhases = (
-				194968B0213EBCE4003408F2 /* Sources */,
-				194968B1213EBCE4003408F2 /* Frameworks */,
-				194968B2213EBCE4003408F2 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				194968B6213EBCE4003408F2 /* PBXTargetDependency */,
-			);
-			name = GasolineProjectUITests;
-			productName = GasolineProjectUITests;
-			productReference = 194968B4213EBCE4003408F2 /* GasolineProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -217,14 +146,6 @@
 				TargetAttributes = {
 					19496894213EBCE3003408F2 = {
 						CreatedOnToolsVersion = 9.4.1;
-					};
-					194968A8213EBCE4003408F2 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 19496894213EBCE3003408F2;
-					};
-					194968B3213EBCE4003408F2 = {
-						CreatedOnToolsVersion = 9.4.1;
-						TestTargetID = 19496894213EBCE3003408F2;
 					};
 				};
 			};
@@ -242,8 +163,6 @@
 			projectRoot = "";
 			targets = (
 				19496894213EBCE3003408F2 /* GasolineProject */,
-				194968A8213EBCE4003408F2 /* GasolineProjectTests */,
-				194968B3213EBCE4003408F2 /* GasolineProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -256,20 +175,6 @@
 				194968A3213EBCE4003408F2 /* LaunchScreen.storyboard in Resources */,
 				194968A0213EBCE4003408F2 /* Assets.xcassets in Resources */,
 				1949689E213EBCE3003408F2 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		194968A7213EBCE4003408F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		194968B2213EBCE4003408F2 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,34 +200,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		194968A5213EBCE4003408F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		194968B0213EBCE4003408F2 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		194968AB213EBCE4003408F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19496894213EBCE3003408F2 /* GasolineProject */;
-			targetProxy = 194968AA213EBCE4003408F2 /* PBXContainerItemProxy */;
-		};
-		194968B6213EBCE4003408F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19496894213EBCE3003408F2 /* GasolineProject */;
-			targetProxy = 194968B5213EBCE4003408F2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1949689C213EBCE3003408F2 /* Main.storyboard */ = {
@@ -494,88 +372,6 @@
 			};
 			name = Release;
 		};
-		194968C1213EBCE4003408F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVX58B2KAX;
-				INFOPLIST_FILE = GasolineProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.Andre.Faruolo.GasolineProjectTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GasolineProject.app/GasolineProject";
-			};
-			name = Debug;
-		};
-		194968C2213EBCE4003408F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVX58B2KAX;
-				INFOPLIST_FILE = GasolineProjectTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.Andre.Faruolo.GasolineProjectTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GasolineProject.app/GasolineProject";
-			};
-			name = Release;
-		};
-		194968C4213EBCE4003408F2 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVX58B2KAX;
-				INFOPLIST_FILE = GasolineProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.Andre.Faruolo.GasolineProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GasolineProject;
-			};
-			name = Debug;
-		};
-		194968C5213EBCE4003408F2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CVX58B2KAX;
-				INFOPLIST_FILE = GasolineProjectUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.br.Andre.Faruolo.GasolineProjectUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GasolineProject;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -593,24 +389,6 @@
 			buildConfigurations = (
 				194968BE213EBCE4003408F2 /* Debug */,
 				194968BF213EBCE4003408F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		194968C0213EBCE4003408F2 /* Build configuration list for PBXNativeTarget "GasolineProjectTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				194968C1213EBCE4003408F2 /* Debug */,
-				194968C2213EBCE4003408F2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		194968C3213EBCE4003408F2 /* Build configuration list for PBXNativeTarget "GasolineProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				194968C4213EBCE4003408F2 /* Debug */,
-				194968C5213EBCE4003408F2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
