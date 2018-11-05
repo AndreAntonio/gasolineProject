@@ -47,9 +47,8 @@ class VehiclesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "vehicleTableViewCell", for: indexPath) as! UITableViewCell
         
-        cell.detailTextLabel?.text = "Xablau"
-        
-        cell.textLabel?.text = self.cars[indexPath.row].make! + " " + self.cars[indexPath.row].model!
+        cell.detailTextLabel?.text = self.cars[indexPath.row].make
+        cell.textLabel?.text = self.cars[indexPath.row].model
         
         return cell
         

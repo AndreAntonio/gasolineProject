@@ -12,7 +12,12 @@ class ResultViewController: UIViewController {
 
     var result: String = ""
     
+    
+    @IBOutlet weak var resultViewOutlet: CustomView!
+    
     @IBOutlet weak var resultStringOutlet: UILabel!
+    
+    @IBOutlet weak var resultSubtitleOutlet: UILabel!
     
     
     override func viewDidLoad() {
@@ -24,7 +29,16 @@ class ResultViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = false
         print(result)
         
+        self.resultViewOutlet.layer.cornerRadius = 20
+        self.resultViewOutlet.layer.masksToBounds = true
+        
         self.resultStringOutlet.text = result
+        
+        if self.result == "Alcool" {
+            self.resultSubtitleOutlet.text = "De acordo com as informações fornecidas, a diferença de autonomia, proporcionalmente, entre alcool e gasolina no seu veículo é menor que, proporcionalmente, a diferença de preço na bomba escolhida. Portanto, o melhor custo benefício é abastecer com Alcool."
+        } else if self.result == "Gasolina"{
+            self.resultSubtitleOutlet.text = "De acordo com as informações fornecidas, a diferença de autonomia, proporcionalmente, entre alcool e gasolina no seu veículo é maior que, proporcionalmente, a diferença de preço na bomba escolhida. Portanto, o melhor custo benefício é abastecer com Gasolina."
+        }
     
         // Do any additional setup after loading the view.
     }

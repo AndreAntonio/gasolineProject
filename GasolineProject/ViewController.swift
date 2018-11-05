@@ -54,13 +54,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-       
-        
-        
         gasolineConsumption.delegate = self
         alcoholConsumption.delegate = self
         gasolinePrice.delegate = self
         alcoholPrice.delegate = self
+        
+        gasolineConsumption.frame.size.height = 45
+        alcoholConsumption.frame.size.height = 45
+        gasolinePrice.frame.size.height = 45
+        alcoholPrice.frame.size.height = 45
+        
+        self.calculateButtonOutlet.layer.cornerRadius = self.calculateButtonOutlet.frame.height/2
         
     }
 

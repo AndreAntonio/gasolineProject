@@ -24,12 +24,17 @@ class AddVehicleViewController: UIViewController, UITextFieldDelegate {
         
         self.title = "Adicionar Veículo"
         
-        self.tabBarController?.tabBar.isHidden = true
+        //self.tabBarController?.tabBar.isHidden = true
         
         makeTextFieldOutlet.delegate = self
         modelTextFieldOutlet.delegate = self
         gasolineAutTextFieldOutlet.delegate = self
         etanolTextFieldOutlet.delegate = self
+        
+        makeTextFieldOutlet.frame.size.height = 45
+        modelTextFieldOutlet.frame.size.height = 45
+        gasolineAutTextFieldOutlet.frame.size.height = 45
+        etanolTextFieldOutlet.frame.size.height = 45
 
         // Do any additional setup after loading the view.
     }
@@ -58,17 +63,25 @@ class AddVehicleViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         
-        var dao = CarDAO()
-       
-        var etanolAut = Double(self.etanolTextFieldOutlet.text as! String)!
-        var gasolineAut = Double(self.gasolineAutTextFieldOutlet.text as! String)!
-        var make = self.makeTextFieldOutlet.text
-        var model = self.modelTextFieldOutlet.text
-        var id = UUID().uuidString
-        
-        dao.create(make: make!, model: model!, gasAut: gasolineAut, etanolAut: etanolAut, id: id)
-        
-        self.navigationController?.popViewController(animated: true)
+        if (self.makeTextFieldOutlet.hasText == false || self.modelTextFieldOutlet.hasText == false) || (self.gasolineAutTextFieldOutlet.hasText == false || self.etanolTextFieldOutlet.hasText == false) {
+            
+            let alert = UIAlertController(title: "Campos Vazios", message: "Alguns dos campos não foram preenchidos corretamente. Por favor, revise-os.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        } else {
+            var dao = CarDAO()
+            
+            var etanolAut = Double(self.etanolTextFieldOutlet.text as! String)!
+            var gasolineAut = Double(self.gasolineAutTextFieldOutlet.text as! String)!
+            var make = self.makeTextFieldOutlet.text
+            var model = self.modelTextFieldOutlet.text
+            var id = UUID().uuidString
+            
+            dao.create(make: make!, model: model!, gasAut: gasolineAut, etanolAut: etanolAut, id: id)
+            
+            self.navigationController?.popViewController(animated: true)
+        }
         
     }
     
